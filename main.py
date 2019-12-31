@@ -2,8 +2,8 @@ import requests
 from pprint import pprint
 import json
 
-auth_token="e0ef9683503f396f145e872c730d79eb" #YOUR_AUTH_TOKEN
-org_id="694212024" #YOUR_ORGANISATION_ID
+auth_token="e0ef9683503f396f145e872c730d79eb"
+org_id="694212024"
 
 params="sortBy=-createdTime&limit=15"
 
@@ -28,4 +28,4 @@ if request.status_code == 200:
             
         print('------------------')
 else:
-    pprint("Request not successful,Response code ",request.status_code," \nResponse : ",request.content)
+    pprint("Request not successful. Response code ", request.status_code, " \nResponse : ", request.content)
