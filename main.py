@@ -13,12 +13,12 @@ headers={
     "contentType": "application/json; charset=utf-8"
 }
 
-request=requests.get('https://desk.zoho.com/api/v1/tickets?' + params, headers=headers)
+request = requests.get('https://desk.zoho.com/api/v1/tickets?' + params, headers=headers)
 
 if request.status_code == 200:
     tickets =  json.loads(request.content.decode('utf-8'))
     for ticket in tickets.get('data'):
-        print(ticket.get('subject'))
+        print('#' + ticket.get('ticketNumber') + ' - ' + ticket.get('subject'))
         print(ticket.get('createdTime'))
         print('Status - ' + ticket.get('status'))
         if ticket.get('closedTime') == None:
