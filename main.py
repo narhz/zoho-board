@@ -1,6 +1,8 @@
 import requests
 from pprint import pprint
 import json
+from dhooks import Webhook
+import pickle
 
 auth_token="e0ef9683503f396f145e872c730d79eb"
 org_id="694212024"
@@ -19,6 +21,8 @@ headers={
     "contentType": "application/json; charset=utf-8"
 }
 
+
+
 request = requests.get('https://desk.zoho.com/api/v1/tickets?' + params, headers=headers)
 
 if request.status_code == 200:
@@ -30,6 +34,7 @@ if request.status_code == 200:
         close_time = ticket.get('closedTime')
         subject = ticket.get('subject')
         agent = ticket.get('assigneeId')
+        ticket_id = ticket.get('id')
 
         print('| #' + number + ' - ' + subject)
         print('| Created at - ' + create_time)
