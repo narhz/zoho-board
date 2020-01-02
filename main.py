@@ -9,7 +9,6 @@ AGENTS = {
     '419932000000128292': 'Seth',
     '419932000001637008': 'Alex',
     '419932000000155091': 'Michelle'
-    'Jake': ''
 }
 
 params="sortBy=-createdTime&limit=15"
