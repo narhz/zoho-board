@@ -31,18 +31,18 @@ if request.status_code == 200:
         subject = ticket.get('subject')
         agent = ticket.get('assigneeId')
 
-        print('#' + number + ' - ' + subject)
-        print('Created at - ' + create_time)
-        print('Status - ' + status)
+        print('| #' + number + ' - ' + subject)
+        print('| Created at - ' + create_time)
+        print('| Status - ' + status)
 
         if agent:
-            print('Assigned to - ' + agent)
+            print('| Assigned to - ' + AGENTS.get(agent, 'Unknown Agent'))
         else:
-            print('Unassigned')
+            print('| Unassigned')
 
         if close_time:
-            print('Closed at - ' + close_time)
+            print('| Closed at - ' + close_time)
 
-        print('------------------')
+        print('---------------------------------')
 else:
     pprint("Request not successful. Response code ", request.status_code, " \nResponse : ", request.content)
