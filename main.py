@@ -6,6 +6,7 @@ import pickle
 
 # account was deleted, auth token is not active
 auth_token="e0ef9683503f396f145e872c730d79eb"
+# org id is vaild though, do whatever you want with that i guess
 org_id="694212024"
 
 AGENTS = {
