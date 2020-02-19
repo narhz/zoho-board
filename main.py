@@ -4,6 +4,7 @@ import json
 from dhooks import Webhook
 import pickle
 
+# account was deleted, auth token is not active
 auth_token="e0ef9683503f396f145e872c730d79eb"
 org_id="694212024"
 
